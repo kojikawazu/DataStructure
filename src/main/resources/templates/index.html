@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--
+	【.html】
+-->
+<head>
+	<meta charset="utf-8">
+	<title th:text="${sortTitle}">Sort</title  >
+	
+	<!-- CSS core -->
+	<link href="commons.css"  th:href="@{/css/common/commons.css}" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="navgation">
+			<h1 class="navigationTitle">Sort</h1 >
+		</div >
+		<div class="mainContents">
+			<div class="contentsTitleBox">
+				<h2 class="contentsTitle" th:text="${sortTitle}"></h2> 
+			</div >
+			<div class="contentsBeforeCardBox">
+				<ul class="contentsBeforeCardList" >
+					<li class="contentsBeforeCard" th:each="beforeCard : ${beforeList}" th:text="${beforeCard}"></li >
+				</ul >
+			</div >
+			<div class="contentsMarkerCardBox">
+				<div class="contentsMark">
+					<span class="dli-arrow-down"></span>
+				</div>
+			</div >
+			<div class="contentsAfterCardBox">
+				<ul class="contentsAfterCardList" >
+					<li class="contentsAfterCard" th:each="afterCard : ${afterList}" th:text="${afterCard}"></li >
+				</ul >
+			</div >
+		</div >
+	</div>
+</body>
+</html>
